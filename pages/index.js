@@ -9,7 +9,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <p>Hello World</p>
+        <p className="text-xl">Hello World</p>
       </main>
     </div>
   )
