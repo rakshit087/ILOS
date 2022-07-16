@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
+import { ActionBox } from "./components/ActionBox";
 import { Navbar } from "./components/Navbar";
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
               Polygon Mainnet.
             </p>
           </div>
-          <div className="my-8 border-2 border-black rounded-lg md:ml-8 h-80 w-80 md:h-96"></div>
+          <ActionBox />
         </main>
       </div>
     </div>
