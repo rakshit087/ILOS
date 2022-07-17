@@ -2,7 +2,7 @@ import abi from "../artifacts/src/contracts/ILoveOpenSource.sol/ILoveOpenSource.
 import { ethers } from "ethers";
 import { useSession } from "next-auth/react";
 
-const contract_address = "0x5F5005a3f180c7EB115C0E06D701d414D85C24B8";
+const contract_address = "0xC07D910c93249417B9968aF1d654053872A191aB";
 
 export const MintButton = () => {
   const { data: session } = useSession();
@@ -17,7 +17,8 @@ export const MintButton = () => {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
         const contract = new ethers.Contract(contract_address, abi.abi, signer);
-        const txn = contract.mint(token, username);
+        const txn = await contract.mint(token, username);
+        txn.wait();
         alert("Minted ILOS tokens! (will fix this alert later)");
       }}
     >

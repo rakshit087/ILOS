@@ -48,7 +48,9 @@ contract ILoveOpenSource is ERC20, ERC20Burnable, ChainlinkClient, Ownable {
         req.addInt("multiply", _multiply);
         mintedAddress[msg.sender] = true;
         mintedUsername[_username] = true;
-        return sendChainlinkRequest(req, fee);
+        bytes32 _req = sendChainlinkRequest(req, fee);
+        minterAddress[_req] = msg.sender;
+        return _req;
     }
 
     function fulfill(bytes32 _requestId, uint256 _value)
