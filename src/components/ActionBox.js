@@ -1,6 +1,7 @@
 import { GithubButton } from "./GithubButton";
 import { SignOut } from "./SignOut";
 import { useSession } from "next-auth/react";
+import { MintButton } from "./Mint";
 export const ActionBox = () => {
   const { data: session } = useSession();
   return (
@@ -19,6 +20,7 @@ export const ActionBox = () => {
             </p>
           </div>
           <div>
+            <MintButton />
             <SignOut />
           </div>
         </div>
