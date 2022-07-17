@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
-import { ActionBox } from "./components/ActionBox";
-import { Navbar } from "./components/Navbar";
+import { ActionBox } from "../components/ActionBox";
+import { Navbar } from "../components/Navbar";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
