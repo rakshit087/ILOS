@@ -2,9 +2,12 @@ import { GithubButton } from "./GithubButton";
 import { SignOut } from "./SignOut";
 import { useSession } from "next-auth/react";
 import { MintButton } from "./Mint";
-
+import { useEffect } from "react";
 export const ActionBox = () => {
   const { data: session } = useSession();
+  useEffect(() => {
+    console.log(session);
+  }, [session]);
   return (
     <div className="flex items-center justify-center my-8 border-2 border-black rounded-lg dark:border-white md:ml-8 h-80 w-80 md:h-96">
       {!session && <GithubButton />}
