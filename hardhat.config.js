@@ -3,6 +3,6 @@ module.exports = {
   solidity: "0.8.9",
   paths: {
     contracts: "./src/contracts",
-    artifacts: "./artifacts",
+    artifacts: "./src/artifacts",
   },
 };
