@@ -1,7 +1,8 @@
 import axiosS from "axios";
 
 export default async function handler(req, res) {
-  const token = req.body.token;
+  const { token } = req.query;
+
   const axios = axiosS.create({
     baseURL: "https://api.github.com/graphql",
     headers: {
@@ -44,10 +45,12 @@ export default async function handler(req, res) {
     res.status(200).json({
       user: user.data.data.viewer.login,
       stargazers: totalStars,
+      ilos: Math.SQRT2(totalStars),
     });
   } catch (error) {
     res.status(401).send({
       stars: 0,
+      ilos: 0,
     });
   }
 }
